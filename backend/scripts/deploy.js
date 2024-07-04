@@ -25,24 +25,12 @@ async function main() {
 
   console.log("DynoToken deployed at:", dynoToken.address);
 
-  // Deploy DynoPool
-  const DynoPool = await ethers.getContractFactory("DynoPool");
-  const dynoPool = await DynoPool.connect(ownerWallet).deploy(
-    dynoToken.address,
-    usdcAddress,
-    ownerAddress
-  );
-  await dynoPool.deployed();
-
-  console.log("DynoPool deployed at:", dynoPool.address);
-
   // Deploy DynoSeller
   const DynoSeller = await ethers.getContractFactory("DynoSeller");
   const dynoSeller = await DynoSeller.connect(ownerWallet).deploy(
     dynoToken.address,
     usdcAddress,
-    ownerAddress,
-    dynoPool.address
+    ownerAddress
   );
   await dynoSeller.deployed();
 
@@ -53,17 +41,16 @@ async function main() {
   const dynoBuyer = await DynoBuyer.connect(ownerWallet).deploy(
     usdcAddress,
     dynoToken.address,
-    dynoSeller.address,
-    dynoPool.address
+    dynoSeller.address
   );
   await dynoBuyer.deployed();
 
   console.log("DynoBuyer deployed at:", dynoBuyer.address);
 
-  // Mint DynoTokens to the DynoPool (initial supply)
+  // Mint DynoTokens to the DynoBuyer (initial supply)
   const mintTx = await dynoToken
     .connect(ownerWallet)
-    .mint(dynoPool.address, ethers.utils.parseEther("1000000000"));
+    .mint(dynoBuyer.address, ethers.utils.parseEther("1000000000"));
   await mintTx.wait();
 
   console.log("Minted DynoTokens to DynoPool");

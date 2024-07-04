@@ -3,7 +3,6 @@ pragma solidity 0.8.24;
 
 import {DynoSeller} from "./DynoSeller.sol";
 import {DynoToken} from "./DynoToken.sol";
-import {DynoPool} from "./DynoPool.sol";
 import {MockUSDC} from "./mocks/MockUSDC.sol";
 import {IUSDC} from "./interfaces/IUSDC.sol";
 import "solmate/src/utils/FixedPointMathLib.sol";
@@ -14,41 +13,25 @@ contract DynoBuyer {
     IUSDC public usdc;
     DynoToken public dyno;
     DynoSeller public seller;
-    DynoPool public pool;
 
     mapping(address => uint256) public buyerBalance;
 
-    constructor(
-        address _usdc,
-        DynoToken _dyno,
-        address payable _seller,
-        DynoPool _pool
-    ) {
+    constructor(address _usdc, DynoToken _dyno, address payable _seller) {
         usdc = IUSDC(_usdc);
         dyno = _dyno;
         seller = DynoSeller(_seller);
-        pool = _pool;
     }
 
     function buyDynoTokens(uint256 amount) public {
         buyerBalance[msg.sender] += amount;
-        // Transfer USDC from the user to the contract
+        // Transfer USDC from the user to the seller contract
         require(
-            usdc.transferFrom(msg.sender, address(pool), amount),
+            usdc.transferFrom(msg.sender, address(seller), amount),
             "USDC transfer failed"
         );
-        // Transfer dynoTokens from the contract to the user
-        require(
-            dyno.transferFrom(address(pool), msg.sender, amount),
-            "DynoToken transfer failed"
-        );
-    }
-
-    function sellDynoTokens(uint256 amount) public {
-        require(amount <= buyerBalance[msg.sender], "Not enough balance");
-        buyerBalance[msg.sender] -= amount;
-        dyno.transferFrom(msg.sender, address(pool), amount);
-        usdc.transferFrom(address(pool), msg.sender, amount);
+        // approve the user of the tokens
+        dyno.approve(msg.sender, amount);
+        require(dyno.transfer(msg.sender, amount), "DynoToken transfer failed");
     }
 
     //@dev energy = 100kwH
