@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import { useState } from "react";
+import classes from "./ConnectWallet.module.css";
 
 export default function ConnectWallet() {
   const [address, setAddress] = useState("");
@@ -7,15 +8,12 @@ export default function ConnectWallet() {
   const [connected, setConnection] = useState(false);
 
   const connectWallet = async () => {
-    //checks if your website has metamask
     if (!window.ethereum) {
       console.error("MetaMask is not installed");
       return;
     }
     try {
-      // recognizes metamask
       const provider = new ethers.providers.Web3Provider(window.ethereum);
-      // sends request for users account
       await provider.send("eth_requestAccounts", []);
       const signer = provider.getSigner();
       setSigner(signer);
@@ -39,8 +37,7 @@ export default function ConnectWallet() {
 
   return (
     <div>
-      <p>Connect to Metamask</p>
-      <button onClick={connectWallet}>
+      <button className={classes["btn-51"]} onClick={connectWallet}>
         {connected ? shortenAddress(address) : "Connect"}
       </button>
     </div>
