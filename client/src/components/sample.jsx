@@ -13,7 +13,7 @@ export const HomePage = () => {
            
                     
                     <ul>
-                        <li><a href="#">Buy Energy</a></li>
+                        <li><a href="#">Home</a></li>
                         <li><a href="#">Buy/Sell</a></li>
                         <li><a href="#">About Us</a></li>
                         
