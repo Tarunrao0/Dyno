@@ -1,12 +1,18 @@
-export const mockUsdcAddress = "0x83d87047e9C8B213F526705Ce61277639D48a158";
-export const dynoTokenAddress = "0xe14D27134c920f5F47395e191d696FAA7A44AeCD";
-export const dynoPoolAddress = "0x3CC603De29c748cDb21ED2C5F2386d341F024e9c";
-export const dynoSellerAddress = "0x2F543735f7d9c8e9c47397c2611585AC693De601";
-export const dynoBuyerAddress = "0x234AFA5Cc9276BcA586651De64020A356BD0Cf81";
+export const mockUsdcAddress = "0x51F0451Ff9aF2ed13c2AA04Bc3FB6d2C56e0d7B6";
+export const dynoTokenAddress = "0x962E6a072e8f0D9581193D7C989C872bfCc36868";
+export const dynoPoolAddress = "0x921E54897F0af1bA3929F5b52b6Fa36c87FeEf71";
+export const dynoSellerAddress = "0xEE404eCc7e1190960040dA8EEbD97EF707306835";
+export const dynoBuyerAddress = "0x1Dd302093D27dad4b52dB8B77Ee77901551B9D2d";
 
 export const mockUsdcAbi = [
   {
-    inputs: [],
+    inputs: [
+      {
+        internalType: "address",
+        name: "_owner",
+        type: "address",
+      },
+    ],
     stateMutability: "nonpayable",
     type: "constructor",
   },
@@ -198,29 +204,6 @@ export const mockUsdcAbi = [
     inputs: [
       {
         internalType: "address",
-        name: "_owner",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "seller",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "value",
-        type: "uint256",
-      },
-    ],
-    name: "approve",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
         name: "account",
         type: "address",
       },
@@ -253,12 +236,12 @@ export const mockUsdcAbi = [
     inputs: [
       {
         internalType: "address",
-        name: "user",
+        name: "_account",
         type: "address",
       },
       {
         internalType: "uint256",
-        name: "amount",
+        name: "_amount",
         type: "uint256",
       },
     ],
@@ -275,6 +258,19 @@ export const mockUsdcAbi = [
         internalType: "string",
         name: "",
         type: "string",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "owner",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
       },
     ],
     stateMutability: "view",
@@ -554,29 +550,6 @@ export const dynoTokenAbi = [
         type: "bool",
       },
     ],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_owner",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "seller",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "value",
-        type: "uint256",
-      },
-    ],
-    name: "approve",
-    outputs: [],
     stateMutability: "nonpayable",
     type: "function",
   },
