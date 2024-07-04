@@ -1,0 +1,138 @@
+.about-us {
+    background-color: #97d9f4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .about-us .div {
+    background-color: #97d9f4;
+    height: 1117px;
+    position: relative;
+    width: 1728px;
+  }
+  
+  .about-us .navbar-container {
+    align-items: center;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1728px;
+  }
+  
+  .about-us .navbar-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 1200px;
+  }
+  
+  .about-us .navbar-brand {
+    flex: 0 0 auto;
+    position: relative;
+  }
+  
+  .about-us .navbar-menu {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 32px;
+    position: relative;
+  }
+  
+  .about-us .navbar-link {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    padding: 24px 12px;
+    position: relative;
+  }
+  
+  .about-us .text-wrapper {
+    color: #000000;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    line-height: 30px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us .navbar-button {
+    all: unset;
+    align-items: center;
+    background-color: #000000;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    justify-content: center;
+    padding: 8px 20px;
+    position: relative;
+  }
+  
+  .about-us .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    line-height: 28px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .about-us .welcome-to-dyno-the {
+    color: #000000;
+    font-family: "Inter-Medium", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 854px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 188px;
+    width: 777px;
+  }
+  
+  .about-us .span {
+    font-weight: 500;
+  }
+  
+  .about-us .text-wrapper-3 {
+    font-family: "Inter-SemiBold", Helvetica;
+    font-size: 32px;
+    font-weight: 600;
+  }
+  
+  .about-us .pic {
+    height: 210px;
+    left: 0;
+    position: absolute;
+    top: 907px;
+    width: 1728px;
+  }
+  
+  .about-us .text-wrapper-4 {
+    color: #000000;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-size: 36px;
+    font-weight: 800;
+    left: 1078px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 138px;
+  }
+  
