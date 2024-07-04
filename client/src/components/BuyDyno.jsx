@@ -2,14 +2,13 @@ import { ethers } from "ethers";
 import {
   dynoBuyerAbi,
   dynoBuyerAddress,
-  dynoTokenAbi,
-  dynoTokenAddress,
   mockUsdcAbi,
   mockUsdcAddress,
-  dynoPoolAbi,
-  dynoPoolAddress,
+  dynoSellerAddress,
+  dynoSellerAbi,
 } from "../constant/constant";
 import { useState } from "react";
+import bg from "../assets/bg.jpeg";
 
 export default function BuyDyno() {
   const [amount, setAmount] = useState("");
@@ -41,9 +40,9 @@ export default function BuyDyno() {
         dynoBuyerAbi,
         signer
       );
-      const dynoTokenContract = new ethers.Contract(
-        dynoTokenAddress,
-        dynoTokenAbi,
+      const sellerContract = new ethers.Contract(
+        dynoSellerAddress,
+        dynoSellerAbi,
         signer
       );
       const mockUsdcContract = new ethers.Contract(
@@ -54,35 +53,20 @@ export default function BuyDyno() {
 
       const parsedAmount = ethers.utils.parseUnits(amount, 6);
 
-      // USDC approval (user -> pool)
-      const user_to_pool_allowance = await mockUsdcContract.allowance(
+      // USDC approval (user -> seller)
+      const user_to_seller_allowance = await mockUsdcContract.allowance(
         userAddress,
-        dynoPoolAddress
+        dynoSellerAddress
       );
-      if (user_to_pool_allowance.lt(parsedAmount)) {
-        const user_to_pool_approveTx = await mockUsdcContract.approve(
-          dynoPoolAddress,
+      if (user_to_seller_allowance.lt(parsedAmount)) {
+        const user_to_seller_approveTx = await mockUsdcContract.approve(
+          dynoSellerAddress,
           parsedAmount
         );
-        await user_to_pool_approveTx.wait();
-        console.log("USDC approval successful (user -> pool 💸)");
+        await user_to_seller_approveTx.wait();
+        console.log("USDC approval successful (user -> buyer 💸)");
       }
 
-      // Dyno approval (pool -> user)
-      const pool_to_user_allowance = await dynoTokenContract.allowance(
-        dynoPoolAddress,
-        userAddress
-      );
-      if (pool_to_user_allowance.lt(parsedAmount)) {
-        const pool_to_user_approveTx = await dynoTokenContract.approve(
-          userAddress,
-          parsedAmount
-        );
-        await pool_to_user_approveTx.wait();
-        console.log("Dyno approval successful (pool -> user 💸)");
-      }
-
-      // USDC approval (user -> buyer)
       const user_to_buyer_allowance = await mockUsdcContract.allowance(
         userAddress,
         dynoBuyerAddress
@@ -95,21 +79,6 @@ export default function BuyDyno() {
         await user_to_buyer_approveTx.wait();
         console.log("USDC approval successful (user -> buyer 💸)");
       }
-
-      // Dyno approval (pool -> buyer)
-      const pool_to_buyer_allowance = await dynoTokenContract.allowance(
-        dynoPoolAddress,
-        dynoBuyerAddress
-      );
-      if (pool_to_buyer_allowance.lt(parsedAmount)) {
-        const pool_to_buyer_approveTx = await dynoTokenContract.approve(
-          dynoBuyerAddress,
-          parsedAmount
-        );
-        await pool_to_buyer_approveTx.wait();
-        console.log("Dyno approval successful (pool -> buyer 💸)");
-      }
-
       // Buy Dyno Tokens
       const tx = await buyerContract.buyDynoTokens(parsedAmount, {
         gasLimit: ethers.BigNumber.from("300000"), // Adjust gas limit
@@ -130,8 +99,21 @@ export default function BuyDyno() {
   };
 
   return (
-    <div>
-      <h2>Buy Dyno Tokens with USDC</h2>
+    <div
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "20px",
+        color: "#fff",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <h2 style={{ marginBottom: "20px" }}>Buy Dyno Tokens with USDC</h2>
       <input
         type="number"
         value={amount}
@@ -139,24 +121,42 @@ export default function BuyDyno() {
         placeholder="Enter amount in USDC"
         min="0"
         step="any"
+        style={{ marginBottom: "10px", padding: "8px", width: "200px" }}
         disabled={isLoading}
       />
-      <button onClick={buyTokens} disabled={isLoading || !amount}>
+      <button
+        onClick={buyTokens}
+        disabled={isLoading || !amount}
+        style={{
+          padding: "10px 20px",
+          fontSize: "16px",
+          backgroundColor: "#007bff",
+          color: "#fff",
+          border: "none",
+          cursor: "pointer",
+          borderRadius: "5px",
+          outline: "none",
+          marginTop: "10px",
+        }}
+      >
         {isLoading ? "Processing..." : "Buy Tokens"}
       </button>
       {transactionHash && (
-        <p>
+        <p style={{ marginTop: "20px" }}>
           Transaction sent:{" "}
           <a
             href={`https://etherscan.io/tx/${transactionHash}`}
             target="_blank"
             rel="noopener noreferrer"
+            style={{ color: "#fff", textDecoration: "underline" }}
           >
             {transactionHash}
           </a>
         </p>
       )}
-      {error && <p style={{ color: "red" }}>Error: {error}</p>}
+      {error && (
+        <p style={{ color: "red", marginTop: "20px" }}>Error: {error}</p>
+      )}
     </div>
   );
 }

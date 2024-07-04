@@ -5,9 +5,7 @@ import { HomePage } from "./components/sample";
 function App() {
   return (
     <>
-    <HomePage/>
       <ConnectWallet />
-      <BuyDyno />
     </>
   );
 }
