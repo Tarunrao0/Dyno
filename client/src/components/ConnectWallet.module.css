@@ -7,36 +7,51 @@
   height: 100vh; /* Adjust based on your layout needs */
   padding: 20px; /* Add padding to prevent button from touching the edges */
 }
+.logo img {
+  padding-top: 40px;
+ margin-right: 980px;
+  width: 120px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
 
 .navbar {
+  height: 80px;
   width: 120%; /* Set width to 100% to fit within the viewport */
   background-color: white;
   overflow: hidden;
   display: flex;
-  justify-content: space-between; /* Align items with space between */
+  justify-content: flex-end;
+  /* Align items with space between */
   align-items: center; /* Center items vertically */
-  padding: 14px 20px;
+  padding: 20px 20px;
   border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow */
+
 }
 
-.navbar .logo {
-  font-size: 35px; /* Adjust font size as needed */
-  font-weight: bold; /* Make text bold */
-  margin-left: 80px; /* Adjust margin to move logo to the left */
-}
 
 .navbar a {
+  
+ margin-top: 30px;
   display: block;
   color: black;
   text-align: center;
-  padding: 24px 20px; /* Adjusted padding to reduce space */
+  padding: 35px 35px; /* Adjusted padding to reduce space */
   text-decoration: none;
   font-size: 17px;
+  position: relative; /* Ensure pseudo-element is positioned relative to the link */
+  transition: all 0.5s ease; /* Add smooth transition */
 }
 
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
+.navbar a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: skyblue; /* Set the highlight color to sky blue */
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: width 0.5s ease; /* Transition only width for smooth effect */
 }
 
 .btn-container {
