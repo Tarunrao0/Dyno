@@ -7,7 +7,7 @@ function App() {
     <>
     <HomePage/>
       <ConnectWallet />
-      <BuyDyno />
+      
     </>
   );
 }

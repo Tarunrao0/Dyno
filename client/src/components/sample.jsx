@@ -6,22 +6,24 @@ export const HomePage = () => {
   return (
     
     <div className="home-page">
-      <div className="div">
-        <div className="overlap">
-          
+     
+       
+        
+        <nav>
+           
+                    
+                    <ul>
+                        <li><a href="#">Buy Energy</a></li>
+                        <li><a href="#">Buy/Sell</a></li>
+                        <li><a href="#">About Us</a></li>
+                        
+                   
+                    </ul>
 
+                </nav>
           </div>
-        </div>
-        <div className="overlap-3">
-        <div className="nav-bar">
-          
-          <div className="text-wrapper-2">DYNO</div>
-          <div className="text-wrapper-3">Home</div>
-          <div className="text-wrapper-4">Buy/Sell</div>
-          <div className="text-wrapper-5">About Us</div>
-          </div>
-        </div>
-      </div>
+        
+     
     
   );
 };

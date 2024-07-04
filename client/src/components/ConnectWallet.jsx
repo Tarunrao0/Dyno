@@ -37,10 +37,19 @@ export default function ConnectWallet() {
   };
 
   return (
-    <div>
-      <button className={classes["btn-51"]} onClick={connectWallet}>
-        {connected ? shortenAddress(address) : "Connect"}
-      </button>
+    <div className={classes.container}>
+      <div className={classes.navbar}>
+        <div className={classes.logo}>DYNO</div>
+        <a href="#home">Buy Energy</a>
+        <a href="#buy">Buy/Sell</a>
+        <a href="#about">About Us</a>
+      </div>
+      <div className={classes["btn-container"]}>
+        <button className={classes["btn-36"]} onClick={connectWallet}>
+          {connected ? shortenAddress(address) : "Connect"}
+        </button>
+      </div>
     </div>
   );
 }
+

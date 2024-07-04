@@ -1,13 +1,50 @@
-.btn-51,
-.btn-51 *,
-.btn-51 :after,
-.btn-51 :before,
-.btn-51:after,
-.btn-51:before {
-  border: 0 solid;
-  box-sizing: border-box;
+/* ConnectWallet.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  height: 100vh; /* Adjust based on your layout needs */
+  padding: 20px; /* Add padding to prevent button from touching the edges */
 }
-.btn-51 {
+
+.navbar {
+  width: 120%; /* Set width to 100% to fit within the viewport */
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between; /* Align items with space between */
+  align-items: center; /* Center items vertically */
+  padding: 14px 20px;
+  border-radius: 10px;
+}
+
+.navbar .logo {
+  font-size: 35px; /* Adjust font size as needed */
+  font-weight: bold; /* Make text bold */
+  margin-left: 80px; /* Adjust margin to move logo to the left */
+}
+
+.navbar a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 24px 20px; /* Adjusted padding to reduce space */
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.btn-container {
+  margin-top: 350px; /* Adjust margin as needed */
+  margin-right:880px ;
+}
+
+.btn-36 {
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: button;
   background-color: #000;
@@ -18,66 +55,80 @@
     Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   font-size: 100%;
+  font-weight: 900;
   line-height: 1.5;
   margin: 0;
   -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
-  padding: 0;
+  padding: 1.1rem 4rem; /* Adjust based on your preference */
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s; /* Add transition for hover effects */
 }
-.btn-51:disabled {
+
+.btn-36:disabled {
   cursor: default;
 }
-.btn-51:-moz-focusring {
+
+.btn-36:-moz-focusring {
   outline: auto;
 }
-.btn-51 svg {
+
+.btn-36 svg {
   display: block;
   vertical-align: middle;
 }
-.btn-51 [hidden] {
+
+.btn-36 [hidden] {
   display: none;
 }
-.btn-51 {
-  --progress: 15px;
+
+.btn-36 .new,
+.btn-36 .old span {
+  font-weight: 900;
+  transition: transform 0.2s;
+}
+
+.btn-36 .new {
+  display: block;
+  transform: scale(0);
+}
+
+.btn-36:hover .new {
+  transform: scale(1);
+}
+
+.btn-36 .old,
+.btn-36 .old span {
+  inset: 0;
+  position: absolute;
+}
+
+.btn-36 .old span {
   background: #fff;
-  bottom: var(--progress);
-  box-sizing: border-box;
   color: #000;
   display: block;
-  font-weight: 900;
-  -webkit-mask-image: none;
-  padding: 1.2rem 3rem;
-  perspective: 800px;
-  position: relative;
-  text-transform: uppercase;
-  transform: rotateX(55deg) rotate(25deg);
-  transform-style: preserve-3d;
-  transition: bottom 0.2s;
+  display: grid;
+  place-items: center;
 }
-.btn-51:after,
-.btn-51:before {
-  content: "";
-  display: block;
-  position: absolute;
-  transform-origin: 0 0;
+
+.btn-36 .old span:first-child {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
 }
-.btn-51:before {
-  background: #eee;
-  height: var(--progress);
-  left: 0;
-  top: 100%;
-  transform: rotateX(-90deg);
-  transition: height 0.2s;
-  width: 100%;
+
+.btn-36 .old span:nth-child(2) {
+  -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
 }
-.btn-51:after {
-  background: #ccc;
-  height: 100%;
-  left: 100%;
-  top: 0;
-  transform: rotateY(90deg);
-  transition: width 0.2s;
-  width: var(--progress);
+
+.btn-36:hover {
+  background-color: #fff; /* Change background color on hover */
+  color: #000; /* Change text color on hover */
 }
-.btn-51:active {
-  --progress: 0px;
+
+.btn-36:hover .old span:first-child {
+  transform: translateY(-50%);
+}
+
+.btn-36:hover .old span:nth-child(2) {
+  transform: translateY(50%);
 }
