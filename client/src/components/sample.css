@@ -1,0 +1,156 @@
+.home-page {
+    background-color: #97d9f4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .home-page .div {
+    background-color: #97d9f4;
+    height: 1117px;
+    position: relative;
+    width: 1728px;
+  }
+  
+  .home-page .overlap {
+    height: 982px;
+    left: 0;
+    position: absolute;
+    top: 135px;
+    width: 1728px;
+  }
+  
+  .home-page .overlap-group {
+    height: 559px;
+    left: 0;
+    position: absolute;
+    top: 423px;
+    width: 1728px;
+  }
+  
+  .home-page .pic1 {
+    height: 194px;
+    left: 0;
+    position: absolute;
+    top: 365px;
+    width: 1728px;
+  }
+  
+  .home-page .image2 {
+    height: 445px;
+    left: 171px;
+    position: absolute;
+    top: 0;
+    width: 628px;
+  }
+  
+  .home-page .img {
+    height: 169px;
+    left: 0;
+    position: absolute;
+    top: 205px;
+    width: 820px;
+  }
+  
+  .home-page .overlap-2 {
+    height: 788px;
+    left: 730px;
+    position: absolute;
+    top: 0;
+    width: 998px;
+  }
+  
+  .home-page .image3 {
+    height: 167px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 860px;
+  }
+  
+  .home-page .pixel {
+    height: 730px;
+    left: 299px;
+    object-fit: cover;
+    position: absolute;
+    top: 58px;
+    width: 699px;
+  }
+  
+  .home-page .overlap-3 {
+    background-color: #ffffff;
+    border-radius: 15px;
+    height: 108px;
+    left: 0;
+    position: absolute;
+    top: -11px;
+    width: 1728px;
+  }
+  
+  .home-page .text-wrapper {
+    color: #000000;
+    font-family: "Istok Web-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    left: 1503px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 36px;
+  }
+  
+  .home-page .text-wrapper-2 {
+    color: #000000;
+    font-family: "Istok Web-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    left: 1569px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 36px;
+  }
+  
+  .home-page .text-wrapper-3 {
+    color: #000000;
+    font-family: "Istok Web-Bold", Helvetica;
+    font-size: 48px;
+    font-weight: 700;
+    left: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 26px;
+    width: 232px;
+  }
+  
+  .home-page .text-wrapper-4 {
+    color: #000000;
+    font-family: "Istok Web-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    left: 1294px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 36px;
+  }
+  
+  .home-page .text-wrapper-5 {
+    color: #000000;
+    font-family: "Istok Web-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    left: 1379px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 36px;
+  }
+  

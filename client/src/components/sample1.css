@@ -1,0 +1,122 @@
+body {
+    background-color: #97d9f4; /* Sky blue background */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: Arial, sans-serif; /* Optional: Set a default font */
+  }
+  
+  .home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh; /* Ensure the page takes up at least the viewport height */
+    padding-top: 50px; /* Adjust top padding as needed */
+  }
+  
+  .home-page .div {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Adjust maximum width as needed */
+    background-color: #ffffff; /* White background for content area */
+    border-radius: 15px; /* Optional: Rounded corners for the container */
+    padding: 20px; /* Adjust padding as needed */
+  }
+  
+  .home-page img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px; /* Optional: Adjust spacing between elements */
+  }
+  
+  .home-page .overlap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px; /* Optional: Ad
+  
+.home-page {
+    background-color: #97d9f4; /* Sky blue background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh; /* Full viewport height */
+    padding-top: 00px; /* Adjust top padding as needed */
+    
+  }
+  
+  .home-page .div {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Adjust maximum width as needed */
+    background-color: #ffffff; /* White background for content area */
+    border-radius: 15px; /* Optional: Rounded corners for the container */
+    padding: 20px; /* Adjust padding as needed */
+  }
+  
+  .home-page img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px; /* Optional: Adjust spacing between elements */
+  }
+  
+  .home-page .overlap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px; /* Optional: Adjust spacing between elements */
+  }
+  
+  .home-page .overlap-group {
+    position: relative;
+    width: 50%;
+  }
+  
+  .home-page .overlap-2 {
+    position: relative;
+    width: 50%;
+  }
+  
+  .home-page .text-wrapper {
+    position: absolute;
+    top: 20px; /* Adjust position as needed */
+    left: 50%; /* Adjust position as needed */
+    transform: translateX(-50%);
+    color: #000000;
+    font-family: "Istok Web-Bold", Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .home-page .text-wrapper-2 {
+    /* Styles for other text wrappers */
+  }
+  
+  /* Additional styling for navigation bar */
+  .home-page .nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Adjust background color and opacity as needed */
+    z-index: 1000; /* Ensure it's above other content */
+    padding: 10px 0; /* Adjust padding as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .home-page .nav-link {
+    margin: 0 10px;
+    color: #000000; /* Adjust link color */
+    text-decoration: none;
+    font-family: "Istok Web-Bold", Helvetica;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
