@@ -1,8 +1,7 @@
-export const mockUsdcAddress = "0x51F0451Ff9aF2ed13c2AA04Bc3FB6d2C56e0d7B6";
-export const dynoTokenAddress = "0x962E6a072e8f0D9581193D7C989C872bfCc36868";
-export const dynoPoolAddress = "0x921E54897F0af1bA3929F5b52b6Fa36c87FeEf71";
-export const dynoSellerAddress = "0xEE404eCc7e1190960040dA8EEbD97EF707306835";
-export const dynoBuyerAddress = "0x1Dd302093D27dad4b52dB8B77Ee77901551B9D2d";
+export const mockUsdcAddress = "0x3c8047f4A9EC64bCaa0d6DEe396AF773Df1c2f3c";
+export const dynoTokenAddress = "0x955B3bCe8b0798917eD4a1e12Db029847353AB67";
+export const dynoSellerAddress = "0x930DC2ef385EdC409D5804dE1251664aC924f655";
+export const dynoBuyerAddress = "0x4E599645aa0A52AE59be9d1E0C66F6276fd6DC0c";
 
 export const mockUsdcAbi = [
   {
@@ -589,12 +588,12 @@ export const dynoTokenAbi = [
     inputs: [
       {
         internalType: "address",
-        name: "user",
+        name: "_account",
         type: "address",
       },
       {
         internalType: "uint256",
-        name: "amount",
+        name: "_amount",
         type: "uint256",
       },
     ],
@@ -710,404 +709,6 @@ export const dynoTokenAbi = [
   },
 ];
 
-export const dynoPoolAbi = [
-  {
-    inputs: [
-      {
-        internalType: "contract DynoToken",
-        name: "_dyno",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "_usdc",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "_owner",
-        type: "address",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  {
-    inputs: [],
-    name: "AlreadyInitialized",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "NewOwnerIsZeroAddress",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "NoHandoverRequest",
-    type: "error",
-  },
-  {
-    inputs: [],
-    name: "Unauthorized",
-    type: "error",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: "address",
-        name: "pendingOwner",
-        type: "address",
-      },
-    ],
-    name: "OwnershipHandoverCanceled",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: "address",
-        name: "pendingOwner",
-        type: "address",
-      },
-    ],
-    name: "OwnershipHandoverRequested",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: "address",
-        name: "oldOwner",
-        type: "address",
-      },
-      {
-        indexed: true,
-        internalType: "address",
-        name: "newOwner",
-        type: "address",
-      },
-    ],
-    name: "OwnershipTransferred",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: "address",
-        name: "user",
-        type: "address",
-      },
-      {
-        indexed: true,
-        internalType: "uint256",
-        name: "roles",
-        type: "uint256",
-      },
-    ],
-    name: "RolesUpdated",
-    type: "event",
-  },
-  {
-    inputs: [],
-    name: "balance",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "cancelOwnershipHandover",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "pendingOwner",
-        type: "address",
-      },
-    ],
-    name: "completeOwnershipHandover",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "dyno",
-    outputs: [
-      {
-        internalType: "contract DynoToken",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "user",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "roles",
-        type: "uint256",
-      },
-    ],
-    name: "grantRoles",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "user",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "roles",
-        type: "uint256",
-      },
-    ],
-    name: "hasAllRoles",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "user",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "roles",
-        type: "uint256",
-      },
-    ],
-    name: "hasAnyRole",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "owner",
-    outputs: [
-      {
-        internalType: "address",
-        name: "result",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "pendingOwner",
-        type: "address",
-      },
-    ],
-    name: "ownershipHandoverExpiresAt",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "result",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "renounceOwnership",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "roles",
-        type: "uint256",
-      },
-    ],
-    name: "renounceRoles",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "requestOwnershipHandover",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "owner",
-        type: "address",
-      },
-    ],
-    name: "retrieveDYNO",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "owner",
-        type: "address",
-      },
-    ],
-    name: "retrieveUSDC",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "user",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "roles",
-        type: "uint256",
-      },
-    ],
-    name: "revokeRoles",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "user",
-        type: "address",
-      },
-    ],
-    name: "rolesOf",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "roles",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "totalSupplyDYNO",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "totalSupplyUSDC",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "newOwner",
-        type: "address",
-      },
-    ],
-    name: "transferOwnership",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "usdc",
-    outputs: [
-      {
-        internalType: "contract IUSDC",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    stateMutability: "payable",
-    type: "receive",
-  },
-];
-
 export const dynoSellerAbi = [
   {
     inputs: [
@@ -1124,11 +725,6 @@ export const dynoSellerAbi = [
       {
         internalType: "address",
         name: "_owner",
-        type: "address",
-      },
-      {
-        internalType: "contract DynoPool",
-        name: "_pool",
         type: "address",
       },
     ],
@@ -1281,31 +877,6 @@ export const dynoSellerAbi = [
       },
     ],
     name: "role_revoked",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "amount",
-        type: "uint256",
-      },
-      {
-        indexed: false,
-        internalType: "address",
-        name: "from",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "address",
-        name: "to",
-        type: "address",
-      },
-    ],
-    name: "swap_successful",
     type: "event",
   },
   {
@@ -1493,19 +1064,6 @@ export const dynoSellerAbi = [
   },
   {
     inputs: [],
-    name: "pool",
-    outputs: [
-      {
-        internalType: "contract DynoPool",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
     name: "renounceOwnership",
     outputs: [],
     stateMutability: "payable",
@@ -1597,7 +1155,7 @@ export const dynoSellerAbi = [
     ],
     name: "swapForUSDC",
     outputs: [],
-    stateMutability: "payable",
+    stateMutability: "nonpayable",
     type: "function",
   },
   {
@@ -1648,11 +1206,6 @@ export const dynoBuyerAbi = [
       {
         internalType: "address payable",
         name: "_seller",
-        type: "address",
-      },
-      {
-        internalType: "contract DynoPool",
-        name: "_pool",
         type: "address",
       },
     ],
@@ -1720,32 +1273,6 @@ export const dynoBuyerAbi = [
       },
     ],
     stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "pool",
-    outputs: [
-      {
-        internalType: "contract DynoPool",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "amount",
-        type: "uint256",
-      },
-    ],
-    name: "sellDynoTokens",
-    outputs: [],
-    stateMutability: "nonpayable",
     type: "function",
   },
   {

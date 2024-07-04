@@ -1,9 +1,9 @@
-import React from "react";
-import classes from "./ConnectWallet.module.css";
+import { useState } from "react";
+import { ethers } from "ethers";
 
-export default function ConnectWallet() {
+const useWalletConnection = () => {
   const [address, setAddress] = useState("");
-  const [signer, setSigner] = useState("");
+  const [signer, setSigner] = useState(null);
   const [connected, setConnection] = useState(false);
 
   const connectWallet = async () => {
@@ -34,26 +34,13 @@ export default function ConnectWallet() {
     )}`;
   };
 
-  return (
-    <div className={classes.container}>
-       
-      <div className={classes.navbar}>
-      <div className={classes.logo}> <img src={dynoImage} alt="dyno" />
-      </div>
-        <a href="#home">Buy Energy</a>
-        <a href="#buy">Buy/Sell</a>
-        <a href="#about">About Us</a>
-      </div>
-      <div className={classes["btn-container"]}>
-        <button
-          className={classes["btn-36"]}
-          onClick={connectWallet}
-          onMouseEnter={() => setHovered(true)} // Set hovered state on mouse enter
-          onMouseLeave={() => setHovered(false)} // Reset hovered state on mouse leave
-        >
-          {connected ? shortenAddress(address) : hovered ? "Wallet" : "Connect"}
-        </button>
-      </div>
-    </div>
-  );
-}
+  return {
+    address,
+    signer,
+    connected,
+    connectWallet,
+    shortenAddress,
+  };
+};
+
+export default useWalletConnection;

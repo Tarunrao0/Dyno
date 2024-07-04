@@ -29,6 +29,12 @@
 
 }
 
+.navbar .logo {
+  color: black;
+  font-size: 35px; /* Adjust font size as needed */
+  font-weight: bold; /* Make text bold */
+  margin-left: 80px; /* Adjust margin to move logo to the left */
+}
 
 .navbar a {
   
@@ -56,7 +62,7 @@
 
 .btn-container {
   margin-top: 350px; /* Adjust margin as needed */
-  margin-right:880px ;
+  margin-right: 880px;
 }
 
 .btn-36 {
