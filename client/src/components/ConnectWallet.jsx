@@ -31,11 +31,14 @@ export default function ConnectWallet() {
     }
   };
 
+  const shortenAddress = (address) => {
+    return `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
+  };
+
   return (
     <div>
       <p>Connect to Metamask</p>
-      <button onClick={connectWallet}>{connected ? address : "Connect"}</button>
+      <button onClick={connectWallet}>{connected ? shortenAddress(address) : "Connect"}</button>
     </div>
   );
 }
- 
