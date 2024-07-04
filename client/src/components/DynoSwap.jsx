@@ -92,7 +92,7 @@ export default function DynoSwap() {
       setIsLoading(false);
     }
   };
-
+}
   export default function BuyDyno() {
   const [amount, setAmount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
