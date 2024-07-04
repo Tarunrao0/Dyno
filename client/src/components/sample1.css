@@ -1,34 +1,22 @@
+/* sample1.css */
+
 body {
-    background-color: #97d9f4; /* Sky blue background */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    font-family: Arial, sans-serif; /* Optional: Set a default font */
-  }
-  
-  .home-page {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh; /* Ensure the page takes up at least the viewport height */
-    padding-top: 50px; /* Adjust top padding as needed */
-  }
+
+    justify-content: space-between;
+    height: 100vh;
+    background-image: url('../assets/bg.jpeg');
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    margin-top: ;
+}
   
-  .home-page .div {
-    position: relative;
-    width: 100%;
-    max-width: 1200px; /* Adjust maximum width as needed */
-    background-color: #ffffff; /* White background for content area */
-    border-radius: 15px; /* Optional: Rounded corners for the container */
-    padding: 20px; /* Adjust padding as needed */
-  }
   
-  .home-page img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 20px; /* Optional: Adjust spacing between elements */
-  }
+  
+  
+  
+
   
   .home-page .overlap {
     display: flex;
@@ -47,34 +35,17 @@ body {
     
   }
   
-  .home-page .div {
+ /* .home-page .div {
     position: relative;
     width: 100%;
     max-width: 1200px; /* Adjust maximum width as needed */
-    background-color: #ffffff; /* White background for content area */
-    border-radius: 15px; /* Optional: Rounded corners for the container */
-    padding: 20px; /* Adjust padding as needed */
-  }
+    
+  /*  border-radius: 15px; /* Optional: Rounded corners for the container */
+  /*  padding: 20px; /* Adjust padding as needed */
   
-  .home-page img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 20px; /* Optional: Adjust spacing between elements */
-  }
   
-  .home-page .overlap {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 20px; /* Optional: Adjust spacing between elements */
-  }
   
-  .home-page .overlap-group {
-    position: relative;
-    width: 50%;
-  }
-  
+
   .home-page .overlap-2 {
     position: relative;
     width: 50%;
@@ -97,26 +68,62 @@ body {
   }
   
   /* Additional styling for navigation bar */
-  .home-page .nav-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9); /* Adjust background color and opacity as needed */
-    z-index: 1000; /* Ensure it's above other content */
-    padding: 10px 0; /* Adjust padding as needed */
+ /* Adjusted styling for navigation bar */
+ /* Styling for the navigation bar */
+.home-page .nav-bar {
+    background-color: #ffffff; /* White background */
+    padding: 10px 80px; /* Adjust padding as needed */
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .home-page .nav-link {
-    margin: 0 10px;
-    color: #000000; /* Adjust link color */
-    text-decoration: none;
+    justify-content: space-around; /* Adjust alignment as needed */
+   
+margin-top: -835px;
+    border-radius: 1px; /* Optional: Rounded corners */
+    width: 120%; /* Ensure full width */
+    position: sticky; /* Keep the navbar sticky at the top */
+    top: 0; /* Position at the top */
+    top: 0; /* Position at the top */
+    z-index: 1000; /* Ensure the navbar stays on top */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  margin-left: -150px;
+}
+.home-page .nav-bar .text-wrapper-2 {
+    color: #000000; /* Adjust text color */
     font-family: "Istok Web-Bold", Helvetica;
-    font-size: 18px;
+    font-size: 35px; /* Adjust font size as needed */
     font-weight: 700;
     text-transform: uppercase;
+    margin-left: -180px; /* Adjust margin-left as needed */
   }
+  
+  .home-page .nav-bar .text-wrapper-3 {
+    color: #000000; /* Adjust text color */
+    font-family: "Istok Web-Bold", Helvetica;
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 10px; /* Adjust right margin for text-wrapper-3 */
+    margin-top: 10px;
+}
+  
+  .home-page .nav-bar .text-wrapper-4 {
+    color: #000000; /* Adjust text color */
+    font-family: "Istok Web-Bold", Helvetica;
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 10px; /* Adjust margin for text-wrapper-4 */
+    margin-top: 10px;
+
+}
+  
+  .home-page .nav-bar .text-wrapper-5 {
+    color: #000000; /* Adjust text color */
+    font-family: "Istok Web-Bold", Helvetica;
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: -20px; /* Adjust left margin for text-wrapper-5 */
+      margin-top: 10px;
+
+}
   
