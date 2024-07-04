@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import { useState } from "react";
+import React from 'react';
 import classes from "./ConnectWallet.module.css";
 
 export default function ConnectWallet() {
