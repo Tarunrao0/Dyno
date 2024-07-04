@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 import bg from "../assets/bg.jpeg";
 
-export default function BuyDyno() {
+export default function DynoSwap() {
   const [amount, setAmount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [transactionHash, setTransactionHash] = useState(null);
@@ -38,11 +38,6 @@ export default function BuyDyno() {
       const buyerContract = new ethers.Contract(
         dynoBuyerAddress,
         dynoBuyerAbi,
-        signer
-      );
-      const sellerContract = new ethers.Contract(
-        dynoSellerAddress,
-        dynoSellerAbi,
         signer
       );
       const mockUsdcContract = new ethers.Contract(
@@ -81,6 +76,77 @@ export default function BuyDyno() {
       }
       // Buy Dyno Tokens
       const tx = await buyerContract.buyDynoTokens(parsedAmount, {
+        gasLimit: ethers.BigNumber.from("300000"), // Adjust gas limit
+        gasPrice: await provider.getGasPrice(), // Get current gas price
+      });
+
+      setTransactionHash(tx.hash);
+      console.log("Transaction sent:", tx.hash);
+
+      await tx.wait();
+      console.log("Transaction mined:", tx.hash);
+    } catch (error) {
+      console.error("Error buying tokens:", error);
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  export default function BuyDyno() {
+  const [amount, setAmount] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [transactionHash, setTransactionHash] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleInputChange = (e) => {
+    setAmount(e.target.value);
+  };
+
+  const buyTokens = async () => {
+    if (!window.ethereum) {
+      console.log("Please connect your wallet");
+      return;
+    }
+
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      await provider.send("eth_requestAccounts", []);
+      const signer = provider.getSigner();
+      const userAddress = await signer.getAddress();
+
+      const sellerContract = new ethers.Contract(
+        dynoSellerAddress,
+        dynoSellerAbi,
+        signer
+      );
+      const dynoTokenContract = new ethers.Contract(
+        dynoTokenAddress,
+        dynoTokenAbi,
+        signer
+      );
+
+      const parsedAmount = ethers.utils.parseUnits(amount, 6);
+
+      // USDC approval (user -> buyer)
+      const user_to_buyer_allowance = await dynoTokenContract.allowance(
+        userAddress,
+        dynoBuyerAddress
+      );
+      if (user_to_buyer_allowance.lt(parsedAmount)) {
+        const user_to_buyer_approveTx = await dynoTokenContract.approve(
+          dynoBuyerAddress,
+          parsedAmount
+        );
+        await user_to_buyer_approveTx.wait();
+        console.log("DYNO approval successful (user -> buyer 💸)");
+      }
+
+      // Swap Dyno Tokens
+      const tx = await sellerContract.swapForUSDC(parsedAmount, {
         gasLimit: ethers.BigNumber.from("300000"), // Adjust gas limit
         gasPrice: await provider.getGasPrice(), // Get current gas price
       });

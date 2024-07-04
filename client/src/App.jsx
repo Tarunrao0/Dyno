@@ -1,12 +1,9 @@
-import ConnectWallet from "./components/ConnectWallet";
 import "./App.css";
-import BuyDyno from "./components/BuyDyno";
-import { HomePage } from "./components/sample";
+import SellDyno from "./components/SellDyno";
 function App() {
   return (
     <>
-      <ConnectWallet />
-      
+      <SellDyno />
     </>
   );
 }
