@@ -1,0 +1,146 @@
+/* page.module.css */
+
+.container {
+  background-color: #97d9f4;
+  position: relative;
+  width: 100%;
+  max-width: 1728px;
+  padding: 0 20px;
+  overflow: hidden; /* Ensure no overflow issues */
+}
+
+.navbar {
+  position: fixed; /* Position the navbar at the top */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Make the navbar take the full width of the container */
+  height: 90px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between; /* Space between elements */
+  align-items: center;
+  padding: 20px;
+  border-radius: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.navbar .logo img {
+  width: 150px; /* Adjust the width of the logo image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.navbar a {
+  color: black;
+  text-align: center;
+  padding: 10px 5px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: all 0.5s ease;
+  margin: 0px 15px; /* Adjust margin to space out the links */
+  position: relative; /* Needed for the pseudo-element */
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: black;
+  transition: width 0.5s ease, right 0.5s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+  right: 0;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+
+.left {
+  margin-top: 200px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack items vertically */
+  text-align: center; /* Center align text */
+}
+
+.right {
+  margin-top: 120px; /* Fixed typo in 'px' */
+  flex: 1;
+  padding-left: 40px;
+  display: flex;
+  justify-content: flex-start; /* Align items to start */
+  align-items: flex-start; /* Align items to start */
+  flex-direction: column; /* Stack items vertically */
+}
+
+.pic {
+  height: auto;
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.3s ease-in-out; /* Add transition for smooth hover effect */
+}
+
+.pic:hover {
+  transform: translateY(-10px); /* Shift image up by 10px on hover */
+  filter: brightness(110%); /* Add a glow effect */
+}
+
+.textWrapper4 {
+  color: #000000;
+  font-family: "Inter-ExtraBold", Helvetica, Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.welcomeToDynoThe {
+  color: #000000;
+  font-family: "Inter-Medium", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-family: "Inter-SemiBold", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.paragraph {
+  color: #000000;
+  font-family: "Inter-Regular", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  position: relative; /* Needed for relative positioning */
+  padding: 10px; /* Add padding to create space for the highlight effect */
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for background color and text color */
+}
+
+/* Highlight effect */
+.paragraph:hover {
+  background-color: rgba(
+    113,
+    104,
+    227,
+    0.8
+  ); /* Slightly reduced opacity highlight color */
+  color: white; /* Change text color to white on hover */
+}

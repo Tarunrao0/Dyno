@@ -2,51 +2,77 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
   height: 100vh;
   padding: 20px;
+  background-image: url("/bg.jpeg"); /* Add background image */
+  background-size: cover; /* Ensure the background covers the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background from repeating */
 }
 
 .logo img {
-  padding-top: 40px;
-  width: 120px;
+  padding-top: 20px;
+  width: 150px;
   height: auto;
 }
 
+.btn-container {
+  margin-bottom: 200px;
+  margin-right: 850px;
+}
+
 .navbar {
+  position: fixed; /* Position the navbar at the top */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Make the navbar take the full width of the container */
   height: 90px;
-  width: 150%;
   background-color: white;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between; /* Space between elements */
   align-items: center;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 1px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
 .navbar .logo {
+  justify-content: flex-start;
   color: black;
-  font-size: 35px;
+  font-size: 75px;
   font-weight: bold;
   margin-left: 20px;
 }
 
 .navbar a {
-  margin-top: 30px;
   color: black;
   text-align: center;
-  padding: 10px 20px;
+  padding: 10px 5px;
   text-decoration: none;
   font-size: 17px;
+  font-weight: bold;
   transition: all 0.5s ease;
+  margin: 0px 2.5px; /* Add margin to space out the links */
+  position: relative; /* Needed for the pseudo-element */
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: black;
+  transition: width 0.5s ease, right 0.5s ease;
 }
 
 .navbar a:hover::after {
   width: 100%;
-}
-
-.btn-container {
-  margin-top: 20px;
+  right: 0;
 }
 
 .btn-36 {

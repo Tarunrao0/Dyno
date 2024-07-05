@@ -5,6 +5,7 @@ import classes from "./ConnectWallet.module.css";
 import Link from "next/link";
 import { ethers } from "ethers";
 import dynoImage from "../../public/dyno.png"; // Ensure dyno.png is in the correct path
+import bgImage from "../../public/bg.jpeg"; // Ensure bg.jpeg is in the correct path
 
 export default function ConnectWallet() {
   const [address, setAddress] = useState("");
@@ -36,14 +37,14 @@ export default function ConnectWallet() {
 
   return (
     <div className={classes.container}>
-      <div className={classes.navbar}>
+      <nav className={classes.navbar}>
         <div className={classes.logo}>
-          <img src={dynoImage} alt="dyno" />
+          <img src={dynoImage.src} alt="dyno" />
         </div>
-        <Link href="/home">Buy Energy</Link>
-        <Link href="/buy">Buy/Sell</Link>
+        <Link href="/buy-energy">Buy Energy</Link>
+        <Link href="/dyno-swap">Buy/Sell</Link>
         <Link href="/about-us">About Us</Link>
-      </div>
+      </nav>
       <div className={classes["btn-container"]}>
         <button
           className={classes["btn-36"]}
