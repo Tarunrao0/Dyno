@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import classes from "./ConnectWallet.module.css";
 import Link from "next/link";
 import { ethers } from "ethers";
-import dynoImage from "../../public/dyno.png"; // Ensure dyno.png is in the correct path
-import bgImage from "../../public/bg.jpeg"; // Ensure bg.jpeg is in the correct path
+import dynoImage from "../../public/dyno.png"; 
+import bgImage from "../../public/bg.jpeg"; 
 
 export default function ConnectWallet() {
   const [address, setAddress] = useState("");

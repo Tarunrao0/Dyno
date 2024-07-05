@@ -5,10 +5,10 @@
   justify-content: flex-end;
   height: 100vh;
   padding: 20px;
-  background-image: url("/bg.jpeg"); /* Add background image */
-  background-size: cover; /* Ensure the background covers the entire container */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Prevent the background from repeating */
+  background-image: url("/bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .logo img {
@@ -23,19 +23,19 @@
 }
 
 .navbar {
-  position: fixed; /* Position the navbar at the top */
-  top: 0; /* Align it to the top */
-  left: 0; /* Align it to the left */
-  width: 100%; /* Make the navbar take the full width of the container */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 90px;
   background-color: white;
   display: flex;
-  justify-content: space-between; /* Space between elements */
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   border-radius: 1px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 1000; /* Ensure it stays above other content */
+  z-index: 1000;
 }
 
 .navbar .logo {
@@ -54,8 +54,8 @@
   font-size: 17px;
   font-weight: bold;
   transition: all 0.5s ease;
-  margin: 0px 2.5px; /* Add margin to space out the links */
-  position: relative; /* Needed for the pseudo-element */
+  margin: 0px 2.5px;
+  position: relative;
 }
 
 .navbar a::after {

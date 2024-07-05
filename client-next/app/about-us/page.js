@@ -1,9 +1,9 @@
-"use client"; // Ensure this is treated as a client component
+"use client";
 
 import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
-import dynoImage from "../../public/dyno.png"; // Ensure dyno.png is in the correct path
+import dynoImage from "../../public/dyno.png";
 
 const AboutUs = () => {
   return (
