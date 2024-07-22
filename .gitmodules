@@ -1,0 +1,12 @@
+[submodule "dyno/lib/forge-std"]
+	path = dyno/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "dyno/lib/solady"]
+	path = dyno/lib/solady
+	url = https://github.com/Vectorized/solady
+[submodule "dyno/lib/solmate"]
+	path = dyno/lib/solmate
+	url = https://github.com/transmissions11/solmate
+[submodule "dyno/lib/openzeppelin-contracts"]
+	path = dyno/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
