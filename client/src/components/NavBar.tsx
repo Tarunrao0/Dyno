@@ -23,9 +23,9 @@ export default function NavBar() {
           <Link href="/">DYNO</Link>
         </div>
         <div className="flex items-center space-x-4 mr-20 mt-8">
-          <Link href="buy-sell" className="px-20">
-            <p className="text-inkblue w-full text-2xl font-black mt-3 mr-20">
-              Buy/Sell
+          <Link href="marketplace" className="px-20">
+            <p className="text-inkblue w-full text-xl font-black mt-3 mr-20">
+              Marketplace
             </p>
           </Link>
           <button

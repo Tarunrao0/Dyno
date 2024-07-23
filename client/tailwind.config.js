@@ -13,6 +13,8 @@ module.exports = {
       },
       fontFamily: {
         superWoobly: ["SuperWoobly"],
+        superVibes: ["SuperVibes"],
+        merchandise: ["Merchandise"],
       },
     },
   },

@@ -11,5 +11,15 @@
 
 @font-face {
   font-family: "SuperWoobly";
-  src: url("../../public/fonts/SuperWoobly.ttf") format("truetype");
+  src: url("/fonts/SuperWoobly.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SuperVibes";
+  src: url("/fonts/SuperVibes.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Merchandise";
+  src: url("/fonts/Merchandise.ttf") format("truetype");
 }
