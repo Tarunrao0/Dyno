@@ -11,6 +11,9 @@ module.exports = {
         marine: "#8da9cd",
         palesky: "#b8d0e7",
       },
+      fontFamily: {
+        superWoobly: ["SuperWoobly"],
+      },
     },
   },
   plugins: [],

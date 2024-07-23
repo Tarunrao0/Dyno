@@ -1,3 +1,4 @@
+/* client/src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,4 +7,9 @@
   html {
     @apply bg-oatmilk;
   }
+}
+
+@font-face {
+  font-family: "SuperWoobly";
+  src: url("../../public/fonts/SuperWoobly.ttf") format("truetype");
 }

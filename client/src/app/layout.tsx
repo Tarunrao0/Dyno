@@ -7,7 +7,7 @@ import { cookieToInitialState } from "wagmi";
 
 import { getConfig } from "../wagmi";
 import { Providers } from "./providers";
-import NavBar from "@/components/navigation/NavBar";
+import NavBar from "@/components/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
