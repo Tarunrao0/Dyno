@@ -1,7 +1,7 @@
 export const mockUsdcAddress = "0x06939f19B5056bed3537a245F96b367fFF429FE6";
-export const DynoTokenAddress = "0x27f86E75a06DAc2c3Fec32A72D38AE75200660AE";
-export const DynoSellerAddress = "0x29A4981D7BF042852dCCcE9C3d6b7fB1192b6A15";
-export const DynoBuyerAddress = "0xb86025F819ECF02F15BC2147763298DF4eF2f80B";
+export const dynoTokenAddress = "0x27f86E75a06DAc2c3Fec32A72D38AE75200660AE";
+export const dynoSellerAddress = "0x29A4981D7BF042852dCCcE9C3d6b7fB1192b6A15";
+export const dynoBuyerAddress = "0xb86025F819ECF02F15BC2147763298DF4eF2f80B";
 
 export const mockUsdcAbi = [
   {
@@ -354,9 +354,9 @@ export const mockUsdcAbi = [
     stateMutability: "nonpayable",
     type: "function",
   },
-];
+] as const;
 
-export const DynoTokenAbi = [
+export const dynoTokenAbi = [
   {
     inputs: [
       {
@@ -707,9 +707,9 @@ export const DynoTokenAbi = [
     stateMutability: "nonpayable",
     type: "function",
   },
-];
+] as const;
 
-export const DynoSellerAbi = [
+export const dynoSellerAbi = [
   {
     inputs: [
       {
@@ -1188,9 +1188,9 @@ export const DynoSellerAbi = [
     stateMutability: "payable",
     type: "receive",
   },
-];
+] as const;
 
-export const DynoBuyerAbi = [
+export const dynoBuyerAbi = [
   {
     inputs: [
       {
@@ -1301,4 +1301,4 @@ export const DynoBuyerAbi = [
     stateMutability: "view",
     type: "function",
   },
-];
+] as const;
