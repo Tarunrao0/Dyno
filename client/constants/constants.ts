@@ -1,7 +1,7 @@
-export const mockUsdcAddress = "0x06939f19B5056bed3537a245F96b367fFF429FE6";
-export const dynoTokenAddress = "0x27f86E75a06DAc2c3Fec32A72D38AE75200660AE";
-export const dynoSellerAddress = "0x29A4981D7BF042852dCCcE9C3d6b7fB1192b6A15";
-export const dynoBuyerAddress = "0xb86025F819ECF02F15BC2147763298DF4eF2f80B";
+export const mockUsdcAddress = "0x6334E8D5199C2c9fb3712D18f3C38829d21E7098";
+export const dynoTokenAddress = "0xC65710C0A72242a731501ab4dC02F87d93E9704d";
+export const dynoSellerAddress = "0x91041e5C2D649B3F6b45a1066714d6352375969B";
+export const dynoBuyerAddress = "0x0c55507E03D1aE943F10a7717C6b71D4C8345174";
 
 export const mockUsdcAbi = [
   {

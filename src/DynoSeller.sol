@@ -67,7 +67,7 @@ contract DynoSeller is OwnableRoles {
     }
 
     function swapForUSDC(uint256 amount) public {
-        require(amount >= dyno.balanceOf(msg.sender), "Not enough balance");
+        require(amount <= dyno.balanceOf(msg.sender), "Not enough balance");
         // Transfer dyno from the user to the contract
         require(
             dyno.transferFrom(msg.sender, address(this), amount),

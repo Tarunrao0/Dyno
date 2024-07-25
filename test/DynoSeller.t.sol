@@ -212,4 +212,17 @@ contract DynoSellerTest is Test {
         vm.expectRevert();
         seller.checkRoles(2);
     }
+
+    function test_bswap() public {
+        vm.prank(owner);
+        dyno.mint(bob, 10);
+
+        vm.prank(owner);
+        usdc.mint(address(seller), 10);
+
+        vm.startPrank(bob);
+        dyno.approve(address(seller), 10);
+        seller.swapForUSDC(10);
+        vm.stopPrank();
+    }
 }
