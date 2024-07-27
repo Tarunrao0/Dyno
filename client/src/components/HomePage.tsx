@@ -1,27 +1,24 @@
-"use client";
-
-import Modal from "./Modal";
-import { Fragment, useState } from "react";
 import SellerTable from "./table-util/SellerTable";
+import Image from "next/image";
+import homepage from "../../public/homepage.png";
 
 export default function HomePage() {
-  const [showModal, setShowModal] = useState(false);
   return (
-    <Fragment>
+    <>
+      <div className="flex mt-12">
+        <h1 className="w-2/5 mt-52 ml-32 text-6xl font-black text-inkblue">
+          Blockchain-Powered Energy for Everyone
+        </h1>
+        <Image
+          className="ml-40 mt-28 object-contain"
+          src={homepage}
+          alt="energy"
+          width={400}
+        />
+      </div>
       <div>
         <SellerTable />
       </div>
-      <div className="ml-96">
-        <button
-          className=" bg-inkblue font-black ml-96 px-6 py-2 text-oatmilk rounded-2xl transition-transform duration-300 hover:-translate-y-2"
-          onClick={() => {
-            setShowModal(true);
-          }}
-        >
-          Become a seller
-        </button>
-      </div>
-      <Modal isOpen={showModal} />
-    </Fragment>
+    </>
   );
 }

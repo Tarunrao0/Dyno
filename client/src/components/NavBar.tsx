@@ -24,8 +24,13 @@ export default function NavBar() {
         </div>
         <div className="flex items-center space-x-4 mr-20 mt-8">
           <Link href="marketplace" className="px-20">
-            <p className="text-inkblue w-full text-xl font-black mt-3 mr-20 transition-transform duration-300 hover:-translate-y-2">
+            <p className="text-inkblue w-full text-xl font-black mt-3  transition-transform duration-300 hover:-translate-y-2">
               Marketplace
+            </p>
+          </Link>
+          <Link href="marketplace" className="px-20">
+            <p className="text-inkblue w-full text-xl font-black mt-3 mr-20 transition-transform duration-300 hover:-translate-y-2">
+              Register
             </p>
           </Link>
           <button

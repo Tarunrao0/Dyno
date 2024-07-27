@@ -1,7 +1,7 @@
 import { getSellers } from "../../../lib/sellers";
 import Table from "./Table";
 
-export default function SellerTable() {
+export default async function SellerTable() {
   const sellers = getSellers();
   return (
     <>
