@@ -23,6 +23,14 @@
     },
     "allowImportingTsExtensions": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/components/HomePage.tsx",
+    "src/app/page.tsx",
+    "src/components/table-util/Table.tsx"
+  ],
   "exclude": ["node_modules"]
 }
