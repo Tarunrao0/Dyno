@@ -8,7 +8,6 @@ import {
   dynoBuyerAddress,
   mockUsdcAddress,
   dynoSellerAddress,
-  dynoTokenAbi,
 } from "../../../constants/constants";
 import { useSellDyno } from "@/hooks/use-sell-dyno";
 import Image from "next/image";
@@ -70,7 +69,7 @@ export default function BuySell() {
       <div className="mt-20 ml-40 text-xl">
         <h3 className="font-merchandise text-3xl text-inkblue">TOKENOMICS: </h3>
         <div className="flex items-start w-full">
-          <div className="font-semibold text-xl w-2/5">
+          <div className="font-medium text-xl w-2/5">
             <ul className="mt-2">
               <li>
                 Dyno Energy Credits are ERC-20 tokens that represent your share
@@ -90,7 +89,7 @@ export default function BuySell() {
         <div className="mt-3">
           <form onSubmit={handleBuy}>
             <label className="font-black text-inkblue">
-              Enter Amount to buy:{" "}
+              Enter amount to buy:{" "}
             </label>
             <div className="flex">
               <input
@@ -111,7 +110,7 @@ export default function BuySell() {
         <div className="w-80 p-3 ml-44">
           <form onSubmit={handleSell}>
             <label className="font-black text-inkblue">
-              Enter Amount to sell:{" "}
+              Enter amount to sell:{" "}
             </label>
             <div className="flex">
               <input

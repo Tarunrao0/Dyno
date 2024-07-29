@@ -28,7 +28,7 @@ export default function NavBar() {
               Marketplace
             </p>
           </Link>
-          <Link href="marketplace" className="px-20">
+          <Link href="register" className="px-20">
             <p className="text-inkblue w-full text-xl font-black mt-3 mr-20 transition-transform duration-300 hover:-translate-y-2">
               Register
             </p>

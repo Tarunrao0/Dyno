@@ -31,6 +31,6 @@
     "src/components/HomePage.tsx",
     "src/app/page.tsx",
     "src/components/table-util/Table.tsx"
-, "src/components/table-util/SellerTable.tsx"  ],
+, "src/components/table-util/SellerTable.tsx", "src/app/[slug]/page.jsx", "src/app/[slug]/SellerPage.jsx", "src/hooks/use-buy-energy.tsx"  ],
   "exclude": ["node_modules"]
 }
