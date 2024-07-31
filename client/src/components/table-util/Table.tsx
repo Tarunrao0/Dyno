@@ -13,7 +13,7 @@ interface TableProps {
 
 export default function Table({ sellers }: TableProps) {
   return (
-    <div className="relative flex flex-col shadow-lg rounded-lg bg-almond/15 mx-auto max-w-4xl mt-52">
+    <div className="relative flex flex-col shadow-lg rounded-lg bg-almond/15 mx-auto max-w-4xl mt-52 mb-20">
       <table className="w-full border-collapse">
         <thead>
           <tr className="border-b">
