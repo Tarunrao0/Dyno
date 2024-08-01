@@ -29,14 +29,17 @@ export default function ImagePicker({ label, name }) {
   }
 
   return (
-    <div>
+    <div className="flex">
       <label htmlFor={name}>{label}</label>
       <div>
         <div>
           {!pickedImage && <p>No image picked yet</p>}
-          {pickedImage && <Image src={pickedImage} alt="user image" fill />}
+          {pickedImage && (
+            <Image src={pickedImage} alt="user image" width={50} height={50} />
+          )}
         </div>
         <input
+          className="hidden"
           type="file"
           id={name}
           accept="image/png, image/jpeg"
@@ -46,8 +49,12 @@ export default function ImagePicker({ label, name }) {
           required
         />
       </div>
-      <button type="button" onClick={handlePickClick}>
-        Pick an Image
+      <button
+        className="block ml-14 mb-8 bg-white font-black px-2 text-inkblue rounded-lg transition-transform duration-300 hover:-translate-y-2 mx-auto"
+        type="button"
+        onClick={handlePickClick}
+      >
+        upload an image
       </button>
     </div>
   );

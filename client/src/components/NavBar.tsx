@@ -29,8 +29,13 @@ export default function NavBar() {
             </p>
           </Link>
           <Link href="register" className="px-20">
-            <p className="text-inkblue w-full text-xl font-black mt-3 mr-20 transition-transform duration-300 hover:-translate-y-2">
+            <p className="text-inkblue w-full text-xl font-black mt-3 mr-18 transition-transform duration-300 hover:-translate-y-2">
               Register
+            </p>
+          </Link>
+          <Link href="dashboard" className="px-20">
+            <p className="text-inkblue w-full text-xl font-black mt-3 mr-20 transition-transform duration-300 hover:-translate-y-2">
+              Dashboard
             </p>
           </Link>
           <button

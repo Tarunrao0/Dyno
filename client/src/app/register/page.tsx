@@ -16,7 +16,7 @@ export default function Register() {
         </p>
         <p>
           After you've been verified, your details will be displayed on the
-          table on the Homepage, where buyers can see and buy your energy 🌩️
+          table on the Homepage, where buyers can see and buy your energy
         </p>
       </div>
       <div className="mt-20 mb-10 flex items-center justify-center">
@@ -24,27 +24,27 @@ export default function Register() {
           <form action={submitForm}>
             <label className="block">Name: </label>
             <input
-              className="mb-4 bg-almond/50 rounded-lg w-full"
+              className="mb-4 bg-almond/50 rounded-lg w-full px-4"
               name="sellerName"
             />
             <label className="block">Email: </label>
             <input
-              className="mb-4 bg-almond/50 rounded-lg w-full"
+              className="mb-4 bg-almond/50 rounded-lg w-full px-4"
               name="sellerEmail"
             />
             <label className="block">Ethereum Wallet Address: </label>
             <input
-              className="mb-4 bg-almond/50 rounded-lg w-full"
+              className="mb-4 bg-almond/50 rounded-lg w-full px-4"
               name="walletAddress"
             />
             <label className="block">Energy type: </label>
             <input
-              className="mb-4 bg-almond/50 rounded-lg w-full"
+              className="mb-4 bg-almond/50 rounded-lg w-full px-4"
               name="energyType"
             />
             <label className="block">About you: </label>
             <textarea
-              className="mb-4 bg-almond/50 rounded-lg w-full"
+              className="mb-4 bg-almond/50 rounded-lg w-full px-4"
               name="summary"
             />
             <ImagePicker label={""} name={"image"} />

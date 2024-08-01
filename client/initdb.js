@@ -3,14 +3,14 @@ const db = sql("sellers.db");
 
 const dummySellers = [
   {
-    slug: "hotcoffee",
-    sellerName: "HotCoffee",
-    sellerEmail: "hotcoffe@gmail.com",
-    walletAddress: "0xdeadBeef",
-    energyType: "windmill",
-    summary:
-      "Equipped with state-of-the-art wind turbines, HotCoffee employs cutting-edge technology to maximize efficiency and energy output. The turbines are designed to operate under various wind conditions, ensuring consistent and reliable energy production.",
-    image: "images/windmill.jpg",
+    slug: "example-seller",
+    sellerName: "Example Seller",
+    sellerEmail: "example@seller.com",
+    walletAddress: "0xexampleaddress",
+    energyType: "solar",
+    summary: "This is an example seller.",
+    image: "path/to/image.jpg",
+    status: "approved",
   },
 ];
 
@@ -24,7 +24,8 @@ db.prepare(
         walletAddress TEXT NOT NULL,
         energyType TEXT NOT NULL,
         summary TEXT NOT NULL,
-        image TEXT NOT NULL
+        image TEXT NOT NULL,
+        status TEXT NOT NULL DEFAULT 'pending'
     )
     `
 ).run();
@@ -39,7 +40,8 @@ async function initData() {
             @walletAddress,
             @energyType,
             @summary,
-            @image
+            @image,
+            @status
         )
         `);
 

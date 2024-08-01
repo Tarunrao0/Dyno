@@ -1,5 +1,4 @@
 "use server";
-
 import { saveSeller } from "./sellers";
 
 export async function submitForm(formData) {

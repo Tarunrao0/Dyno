@@ -10,7 +10,7 @@ export default function HomePage() {
           Blockchain Powered Energy for Everyone
         </h1>
         <Image
-          className="ml-40 mt-28 object-contain"
+          className="ml-40 mt-24 object-contain"
           src={homepage}
           alt="energy"
           width={400}
