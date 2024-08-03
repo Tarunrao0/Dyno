@@ -36,6 +36,6 @@
     "src/app/[slug]/SellerPage.jsx",
     "src/hooks/use-buy-energy.tsx",
     "src/components/table-util/SellerTableClient.jsx"
-, "src/components/ImagePicker.jsx"  ],
+, "src/components/ImagePicker.jsx", "src/app/register/page.jsx"  ],
   "exclude": ["node_modules"]
 }

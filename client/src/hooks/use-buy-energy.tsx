@@ -21,7 +21,7 @@ export const useBuyEnergy = () => {
     ownerAddress: string,
     sellerAddress: string
   ) => {
-    checkAllowance(dynoTokenAddress, ownerAddress, sellerAddress, energy);
+    checkAllowance(dynoTokenAddress, ownerAddress, dynoBuyerAddress, energy);
 
     writeContract({
       address: dynoBuyerAddress,

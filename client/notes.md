@@ -17,3 +17,5 @@ form color options :
 {isbuytxConfirming && <div> Waiting for confirmation </div>}
 {isbuytxConfirmed && <div> Transaction confirmed. </div>}
 </div>
+
+

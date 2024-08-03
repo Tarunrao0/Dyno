@@ -1,19 +1,6 @@
 const sql = require("better-sqlite3");
 const db = sql("sellers.db");
 
-const dummySellers = [
-  {
-    slug: "example-seller",
-    sellerName: "Example Seller",
-    sellerEmail: "example@seller.com",
-    walletAddress: "0xexampleaddress",
-    energyType: "solar",
-    summary: "This is an example seller.",
-    image: "path/to/image.jpg",
-    status: "approved",
-  },
-];
-
 db.prepare(
   `
     CREATE TABLE IF NOT EXISTS sellers (
@@ -44,10 +31,6 @@ async function initData() {
             @status
         )
         `);
-
-  for (const seller of dummySellers) {
-    stmt.run(seller);
-  }
 }
 
 initData();

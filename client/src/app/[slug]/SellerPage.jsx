@@ -1,6 +1,7 @@
 "use client";
 import { useAccount } from "wagmi";
 import { useBuyEnergy } from "@/hooks/use-buy-energy";
+import Image from "next/image";
 
 export default function SellerPage({ sellerData }) {
   const {
@@ -38,8 +39,19 @@ export default function SellerPage({ sellerData }) {
           <p className="font-bold">email: {sellerData.sellerEmail}</p>
           <p className="ml-20 font-bold"> wallet: {sellerData.walletAddress}</p>
         </div>
-        <div className="mt-8 w-2/5">{sellerData.summary}</div>
-        <div className="mt-20">
+        <div className="flex w-full items-start">
+          <div className="mt-8 w-3/5">{sellerData.summary}</div>
+          <div className="ml-10 mt-4 rounded-lg">
+            <Image
+              className="rounded-lg"
+              src={`${sellerData.image}`}
+              width={400}
+              height={400}
+            />
+          </div>
+        </div>
+
+        <div className="mt-20 mb-14">
           <form onSubmit={handleSubmit}>
             <label className="text-inkblue font-black">
               Enter the amount of energy you want to recieve:

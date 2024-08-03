@@ -2,7 +2,7 @@
 
 import React from "react";
 import { type BaseError, useAccount } from "wagmi";
-import { useBuyDyno } from "@/hooks/use-buy-dyno.tsx";
+import { useBuyDyno } from "@/hooks/use-buy-dyno";
 import {
   dynoTokenAddress,
   dynoBuyerAddress,
@@ -31,13 +31,14 @@ export default function BuySell() {
     e.preventDefault();
     const buyData = new FormData(e.target as HTMLFormElement);
     const amount = Number(buyData.get("amount"));
+    const amountWithPrecision = amount * 10 ** 18;
 
     try {
       await buyDyno(
         mockUsdcAddress,
         ownerAddress as string,
         dynoBuyerAddress,
-        amount
+        amountWithPrecision
       );
     } catch (error) {
       console.error(error);
@@ -48,13 +49,14 @@ export default function BuySell() {
     e.preventDefault();
     const sellData = new FormData(e.target as HTMLFormElement);
     const sell_amount = Number(sellData.get("sell_amount"));
+    const sellAmountWithPrecision = sell_amount * 10 ** 18;
 
     try {
       await sellDyno(
         dynoTokenAddress,
         ownerAddress as `0x${string}`,
         dynoSellerAddress,
-        sell_amount
+        sellAmountWithPrecision
       );
     } catch (error) {
       console.error(error);
@@ -120,7 +122,7 @@ export default function BuySell() {
               />
               <button
                 className=" bg-inkblue font-black px-8 text-oatmilk rounded-2xl transition-transform duration-300 hover:-translate-y-2"
-                disabled={isPending}
+                disabled={selltxPending}
                 type="submit"
               >
                 {selltxPending ? "Confirming..." : "Sell"}

@@ -1,7 +1,24 @@
+"use client";
 import ImagePicker from "@/components/ImagePicker";
 import { submitForm } from "../../../lib/action";
+import { useState } from "react";
 
 export default function Register() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(event.target);
+    new Promise((resolve) => {
+      submitForm(formData);
+      resolve();
+    }).then(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    });
+  };
   return (
     <>
       <div>
@@ -21,7 +38,7 @@ export default function Register() {
       </div>
       <div className="mt-20 mb-10 flex items-center justify-center">
         <div className=" bg-almond/15 p-4 pr-10 pl-10 rounded-lg font-semibold w-full max-w-md">
-          <form action={submitForm}>
+          <form onSubmit={handleSubmit}>
             <label className="block">Name: </label>
             <input
               className="mb-4 bg-almond/50 rounded-lg w-full px-4"
@@ -52,7 +69,7 @@ export default function Register() {
               type="submit"
               className="block bg-inkblue font-black px-8 text-oatmilk rounded-lg transition-transform duration-300 hover:-translate-y-2 mx-auto"
             >
-              Submit
+              {isSubmitted ? "Done" : isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </form>
         </div>
